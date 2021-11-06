@@ -106,6 +106,14 @@
              android:textColor="#000"/>
             
         </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NOTE:  \nPause trước khi chọn bài và ấn Play để nghe sau khi chọn"
+            android:textSize="23sp"
+            android:textColor="@color/black"
+            android:paddingTop="30dp"
+            android:gravity="center"/>
 
     </LinearLayout>
 

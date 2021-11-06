@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    TextView Chon,play,pause;
     TextView tvIndex, tvName, tvTime;
     MediaPlayer music;
     List<Songclass> songs;
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getView();
 
         Intent intent = getIntent();
-        int id = intent.getIntExtra("data", 1);
+        int id = (int)intent.getIntExtra("data",1);
         updateView(id);
     }
 
@@ -52,24 +51,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         songs.add(new Songclass(6, R.raw.xuannayconkhongve, "Xuân này con không về"));
 
     }
+    private void getView() {
+        tvIndex = findViewById(R.id.tvIndex);
+        tvName = findViewById(R.id.tvTenbai);
+
+    }
 
     private void updateView(int id) {
         tvIndex.setText("Bài " + id);
-        tvName.setText(getCurrentSong().getName());
-        music = MediaPlayer.create(MainActivity.this, getCurrentSong().getResourceId());
+        tvName.setText(getSong().getName());
+        music = MediaPlayer.create(MainActivity.this, getSong().getResourceId());
     }
 
-    private Songclass getCurrentSong() {
-        String sIndex = tvIndex.getText().toString().split(" ")[1].toString();
+    private Songclass getSong() {
+        String sIndex = tvIndex.getText().toString().split(" ")[1];
         Integer index = Integer.parseInt(sIndex);
         return songs.get(index - 1);
     }
 
-    private void getView() {
-        tvIndex = findViewById(R.id.tvIndex);
-        tvName = findViewById(R.id.tvTenbai);
-        tvTime = findViewById(R.id.tvTime);
-    }
+
 
 
     public void musicplay(View v) {

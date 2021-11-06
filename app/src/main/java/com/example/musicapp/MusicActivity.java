@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -39,38 +41,47 @@ public class MusicActivity extends AppCompatActivity implements View.OnClickList
     public void SelectSong(View view){
         Button btn = (Button) view;
         tvSoBai.setText(btn.getText());
-
-    }
-    public void changeSong(View view) {
         int id = Integer.parseInt(tvSoBai.getText().toString());
         Bundle bundle= new Bundle();
         Intent intent = new Intent(this, MainActivity.class);
         if (id==1){
             bundle.putInt("data",id);
             intent.putExtras(bundle);
+            startActivity(intent);
+            finish();
+
         }
         if (id==2){
             bundle.putInt("data",id);
             intent.putExtras(bundle);
+            startActivity(intent);
+            finish();
         }
         if (id==3){
             bundle.putInt("data",id);
             intent.putExtras(bundle);
+            startActivity(intent);
+            finish();
         }
         if (id==4){
             bundle.putInt("data",id);
             intent.putExtras(bundle);
+            startActivity(intent);
+            finish();
         }
         if (id==5){
             bundle.putInt("data",id);
             intent.putExtras(bundle);
+            startActivity(intent);
+            finish();
         }
         if (id==6){
             bundle.putInt("data",id);
             intent.putExtras(bundle);
+            startActivity(intent);
+            finish();
         }
-        startActivity(intent);
-        finish();
+
     }
 
     @Override
