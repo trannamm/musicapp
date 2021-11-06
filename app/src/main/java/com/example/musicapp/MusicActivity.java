@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MusicActivity extends AppCompatActivity implements View.OnClickListener {
     TextView tvSoBai;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +50,7 @@ public class MusicActivity extends AppCompatActivity implements View.OnClickList
             intent.putExtras(bundle);
             startActivity(intent);
             finish();
+
 
         }
         if (id==2){

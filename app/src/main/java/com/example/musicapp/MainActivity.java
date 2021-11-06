@@ -61,12 +61,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvIndex.setText("Bài " + id);
         tvName.setText(getSong().getName());
         music = MediaPlayer.create(MainActivity.this, getSong().getResourceId());
+          music.start();
     }
 
     private Songclass getSong() {
         String sIndex = tvIndex.getText().toString().split(" ")[1];
         Integer index = Integer.parseInt(sIndex);
+//        music.pause();
         return songs.get(index - 1);
+
     }
 
 
@@ -85,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tvChonBai:
+                music.pause();
                 Intent intent2 = new Intent();
                 intent2.setClass(this, MusicActivity.class);
                 startActivity(intent2);
